@@ -15,7 +15,7 @@ const userSchema =  new mongoose.Schema({
     // },
     gender:{
         type:String,
-        enum:[Male,Female,Other]
+        enum:["Male","Female","Other"]
     },
     dob:{
         type:Date
@@ -23,10 +23,11 @@ const userSchema =  new mongoose.Schema({
     profileImage:{
         type:String
     },
-    isVerified: {
-         type: Boolean,
-          default: false 
-        },
+    otp: {
+        code: { type: String },
+        expiresAt: { type: Date },
+        isVerified: { type: Boolean, default: false }
+      },
   walletBalance: {
      type: Number,
       default: 0 
